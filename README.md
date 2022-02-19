@@ -5,17 +5,17 @@ React Native TurboModule for getting battery level.
 ## Installation
 
 ```sh
-npm install react-native-turbo-battery
+yarn add react-native-turbo-battery
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "react-native-turbo-battery";
+import { getBatteryLevel } from "react-native-turbo-battery";
 
 // ...
 
-const result = await multiply(3, 7);
+const batteryLevel = getBatteryLevel();
 ```
 
 ## Contributing

@@ -12,6 +12,7 @@ buildscript {
     }
 }
 
+apply plugin: 'com.facebook.react'
 apply plugin: 'com.android.library'
 
 def safeExtGet(prop, fallback) {
@@ -19,10 +20,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('TurboBattery_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('TurboBattery_compileSdkVersion', 31)
     defaultConfig {
-        minSdkVersion safeExtGet('TurboBattery_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('TurboBattery_targetSdkVersion', 29)
+        minSdkVersion safeExtGet('TurboBattery_minSdkVersion', 21)
+        targetSdkVersion safeExtGet('TurboBattery_targetSdkVersion', 31)
         versionCode 1
         versionName "1.0"
 
@@ -55,5 +56,13 @@ repositories {
 
 dependencies {
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation project(':ReactAndroid')
+}
+
+react {
+    reactRoot = rootProject.file("../node_modules/react-native/")
+    jsRootDir = file("../src/")
+    codegenDir = rootProject.file("../node_modules/react-native-codegen/")
+    libraryName = "rnturbobattery"
+    codegenJavaPackageName = "com.swmansion.turbobattery"
 }

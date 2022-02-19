@@ -1,4 +1,4 @@
-package com.reactnativeturbobattery;
+package com.swmansion.turbobattery;
 
 import androidx.annotation.NonNull;
 
@@ -16,7 +16,7 @@ public class TurboBatteryPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new TurboBatteryModule(reactContext));
+        modules.add(new NativeBatteryTurboModule(reactContext));
         return modules;
     }
 
